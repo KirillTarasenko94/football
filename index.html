@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Официальный сайт о футболе. Узнайте последние новости, смотрите матчи онлайн, читайте интересные статьи о футбольных командах, игроках и турнирах. Получите свой футбольный мяч прямо сейчас!"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="icon"
+      href="https://e7.pngegg.com/pngimages/889/150/png-clipart-computer-icons-soccer-ball-sport-logo.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <title>Football</title>
+  </head>
+  <body>
+    <div class="container">
+      <menu class="animate__animated animate__backInLeft">
+        <span>Футбольчик</span>
+        <ul>
+          <a href="#Главная">Главная</a>
+          <a href="#Внутренняя про игру">Внутренняя про игру</a>
+          <a href="#Контакты">Контакты</a>
+        </ul>
+        <button>Кнопка</button>
+      </menu>
+      <section id="Главная" class="animate__animated animate__backInRight">
+        <div class="section-block">
+          <div class="section-info">
+            <h1 id="Внутренняя про игру">Любишь футбол?</h1>
+            <p>Получи мяч на первую игру</p>
+            <p id="typing-text"></p>
+            <button>Получить мяч</button>
+          </div>
+          <img src="./img/football.png" alt="img" />
+        </div>
+      </section>
+      <footer id="Контакты">
+        <h2 class="animate__animated animate__backInUp">
+          Начни игру с выбора мяча
+        </h2>
+        <p class="animate__animated animate__backInUp">
+          Любой спорт с чего-то начинается. Мы предлагаем ознакомиться с
+          ассортиментом наших фирменных игровых мячей и выбрать свой. Ворвись в
+          игру с максимальным преимуществом и обойди всех соперников с бонусами
+          и отличным настроением.
+        </p>
+        <div class="footer-wrapper-block">
+          <div class="footer-wrapper">
+            <div class="footer-block">
+              <span>PNG <br />мяча</span>
+            </div>
+            <div class="footer-info">
+              <h3 class="animate__animated animate__backInRight">ГИГАМЯЧ</h3>
+              <p class="animate__animated animate__backInRight">
+                отличный выбор для новичка
+              </p>
+            </div>
+          </div>
+          <div class="footer-wrapper">
+            <div class="footer-block">
+              <span class="animate__animated animate__backInUp"
+                >PNG <br />мяча</span
+              >
+            </div>
+            <div class="footer-info">
+              <h3 class="animate__animated animate__backInUp">ТУРБОМЯЧ</h3>
+              <p class="animate__animated animate__backInUp">
+                для тех кто любит скорость
+              </p>
+            </div>
+          </div>
+          <div class="footer-wrapper">
+            <div class="footer-block">
+              <span>PNG <br />мяча</span>
+            </div>
+            <div class="footer-info">
+              <h3 class="animate__animated animate__backInRight">МУДРОМЯЧ</h3>
+              <p class="animate__animated animate__backInRight">
+                хитрый игрок оценит
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script>
+      function typeAndErase() {
+        let text = "Набирающийся и исчезающий текст.";
+        let elem = document.getElementById("typing-text");
+        let index = 0;
+
+        function type() {
+          let typeInterval = setInterval(function () {
+            elem.textContent += text[index];
+            index++;
+            if (index === text.length) {
+              clearInterval(typeInterval);
+              setTimeout(erase, 1000);
+            }
+          }, 100);
+        }
+
+        function erase() {
+          let eraseInterval = setInterval(function () {
+            let currentText = elem.textContent;
+            elem.textContent = currentText.slice(0, -1);
+            if (elem.textContent === "") {
+              clearInterval(eraseInterval);
+              index = 0;
+              setTimeout(type, 1000);
+            }
+          }, 100);
+        }
+
+        type();
+      }
+
+      typeAndErase();
+    </script>
+  </body>
+</html>
